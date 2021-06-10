@@ -34,3 +34,13 @@ async function getServerDate() {
   const messageContainer = document.getElementById('server-date-container');
   messageContainer.innerText = textFromResponse;
 }
+
+async function addRandomMessage() {
+  const messagesResponse = await fetch('/messages');
+  const messages = await messagesResponse.json();
+
+  // Pick a random message
+  const message = messages[Math.floor(Math.random() * messages.length)];
+  const messageContainer = document.getElementById('message-container');
+  messageContainer.innerText = message;
+}
