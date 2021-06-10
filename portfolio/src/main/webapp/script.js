@@ -26,3 +26,11 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+async function getServerDate() {
+  const responseFromServer = await fetch('/date');
+  const textFromResponse = await responseFromServer.text();
+
+  const messageContainer = document.getElementById('server-date-container');
+  messageContainer.innerText = textFromResponse;
+}
