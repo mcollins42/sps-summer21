@@ -44,3 +44,20 @@ async function addRandomMessage() {
   const messageContainer = document.getElementById('message-container');
   messageContainer.innerText = message;
 }
+
+async function listComments() {
+    const commentsResponse = await fetch('/list-comments');
+    const comments = await commentsResponse.json();
+    const tableElement = document.getElementById('comment-table');
+    comments.forEach(
+        (comment) => tableElement.appendChild(createCommentElement(comment))
+    );
+}
+
+/** Creates an element that represents a task, including its delete button. */
+function createCommentElement(comment) {
+
+  const tableRowElement = document.createElement('tr');
+  tableRowElement.innerHTML = '<td>' + comment.name + '<td>' + comment.createTime + '<td>' + comment.comment + '</td>'
+  return tableRowElement;
+}

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="listComments()">
     <div id="content">
       <h1>Mark Collins Portfolio</h1>
       <p>This is my portfolio.</p>
@@ -25,12 +25,16 @@
     <div id=comments>
       <form action="/new-comment" method="POST">
         <p>Name: <input type="text" name="name"/></p>
-        <p>Email: <input type="text" name="email"/></p>
-        <p>Comments:</p>
+        <p>Comment:</p>
         <textarea name="comment"></textarea>
         <br/>
         <input type="submit" />
       </form>
     </div>
+    <table id="comment-table">
+        <th>Name</th>
+        <th>Created</th>
+        <th>Comment</th>
+    </table>
   </body>
 </html>
