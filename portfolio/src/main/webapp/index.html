@@ -21,5 +21,16 @@
       <p><button onclick="addRandomMessage()">Get Quote</button></p>
       <p id="message-container"></p>
     </div>
+
+    <div id=comments>
+      <form action="/form-handler" method="POST">
+        <p>Name: <input type="text" name="name"/></p>
+        <p>Email: <input type="text" name="email"/></p>
+        <p>Comments:</p>
+        <textarea name="comments"></textarea>
+        <br/>
+        <input type="submit" />
+      </form>
+    </div>
   </body>
 </html>
